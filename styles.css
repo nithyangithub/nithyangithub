@@ -1,0 +1,95 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.logo {
+    width: 80px; /* Adjust as needed */
+    height: auto;
+    margin-bottom: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #f7f8fa;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Form Container */
+.form-container {
+    max-width: 400px;
+    width: 90%;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Title */
+h1 {
+    font-size: 1.5rem;
+    color: #111827;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+/* Input Field */
+#schoolCode {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #111827;
+    background: #f9fafb;
+    transition: border-color 0.2s ease;
+}
+
+#schoolCode:focus {
+    border-color: #3b82f6;
+    outline: none;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(90deg, #3b82f6, #6366f1);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #2563eb, #4f46e5);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Result Text */
+#result {
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+.success {
+    color: #16a34a;
+}
+
+.error {
+    color: #dc2626;
+}
