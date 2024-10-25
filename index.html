@@ -20,8 +20,14 @@
             margin-right: 10px;
         }
         button {
-            padding: 10px 15px;
+padding: 12px 28px;
+		border-radius: 12px;
+		font-size: 16px;
         }
+	    
+.button2:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
         #result {
             margin-top: 20px;
             font-weight: bold;
@@ -36,8 +42,8 @@
 <h1>KNOW YOUR ALLOTTED ROOM </h1>
 <p>Enter the school code.</p>
 
-<input type="text" id="schoolCode" placeholder="Enter school code">
-<button onclick="checkSchoolCode()">Find</button>
+<input type="text" id="schoolCode" >
+<button onclick="checkSchoolCode()" >Find</button>
 
 <div id="result"></div>
 
