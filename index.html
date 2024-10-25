@@ -26,7 +26,7 @@
         }
     </style>
 </head>
-<body Background='https://drive.google.com/file/d/1rr92EroPslWHtRc4ugAbkmjxd9ieVk40/view?usp=sharing'>
+<body style="background-image: url('LOGO1.png')">
 
 <h1>KNOW YOUR ALLOTTED ROOM </h1>
 <p>Enter the school code.</p>
@@ -48,14 +48,14 @@ const schoolnames=["G. H. S. S. Beypore","G. R. F. T. H. S. And V. H. S. S. Beyp
         const resultDiv = document.getElementById('result');
 
         if (schoolCodes.includes(inputCode)) {
-			alert(schoolnames[schoolCodes.indexOf(inputCode)] + " Alotted room is "+ " "+roomnums[schoolCodes.indexOf(inputCode)]) ;
+			// alert(schoolnames[schoolCodes.indexOf(inputCode)] + " Alotted room is "+ " "+roomnums[schoolCodes.indexOf(inputCode)]) ;
           
             resultDiv.textContent =schoolnames[schoolCodes.indexOf(inputCode)] + " Alotted room is "+ " "+roomnums[schoolCodes.indexOf(inputCode)] ;
            resultDiv.style.color = "green";
         } else {
-            alert("School code not found");
-           // resultDiv.textContent = "School code not registred .";
-           // resultDiv.style.color = "red";
+            // alert("School code not found");
+           resultDiv.textContent = "School code not registred .";
+           resultDiv.style.color = "red";
         }
     }
 </script>
