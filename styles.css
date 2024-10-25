@@ -83,7 +83,7 @@ button:active {
 /* Result Text */
 #result {
     margin-top: 1rem;
-    font-size: 1rem;
+    font-size: 1.25rem;
 }
 
 .success {
@@ -92,4 +92,11 @@ button:active {
 
 .error {
     color: #dc2626;
+}
+
+/* Room Number Style */
+.room-number {
+    font-weight: bold;
+    font-size: 1.25rem; /* Adjust size as needed */
+    color: #16a34a; /* Color to match the theme */
 }

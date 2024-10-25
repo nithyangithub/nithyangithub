@@ -56,17 +56,20 @@
         ];
 
         function checkSchoolCode() {
-            const inputCode = document.getElementById('schoolCode').value.trim();
-            const resultDiv = document.getElementById('result');
+    const inputCode = document.getElementById('schoolCode').value.trim();
+    
+    const resultDiv = document.getElementById('result');
 
-            if (schoolCodes.includes(inputCode)) {
-                resultDiv.textContent = schoolnames[schoolCodes.indexOf(inputCode)] + " Allotted room is " + roomnums[schoolCodes.indexOf(inputCode)];
-                resultDiv.style.color = "green";
-            } else {
-                resultDiv.textContent = "School code not registered.";
-                resultDiv.style.color = "red";
-            }
-        }
+    if (schoolCodes.includes(inputCode)) {
+        const roomNumber = roomnums[schoolCodes.indexOf(inputCode)];
+        resultDiv.innerHTML = `${schoolnames[schoolCodes.indexOf(inputCode)]} - Allotted room: <strong class="room-number">${roomNumber}</strong>`;
+        resultDiv.className = 'success';
+    } else {
+        resultDiv.textContent = "School code not registered.";
+        resultDiv.className = 'error';
+    }
+}
+
     </script>
 </body>
-</
+
