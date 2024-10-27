@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Color on Button Press</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* Space between rows */
+        }
+        .row {
+            display: flex;
+            gap: 5px; /* Space between columns */
+        }
+        .column {
+            flex: 1; /* Equal width for each column */
+            padding: 15px;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.5s;
+        }
+         .columnNILL {
+            flex: 1; /* Equal width for each column */
+            padding: 15px;
+            border: 0px solid #ccc;
+            
+            
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="changeColorButton">Change Colors</button>
+    <CENTER><H2><U>HS BLOCK</U></H2></CENTER>
+    <div class="container">
+		<div class="row">
+			<div class="columnNILL" ></div>
+			 <div class="columnNILL" ></div>
+            <div class="column" id="HS27">HS27</div>
+            <div class="column" id="HS28">HS28</div>
+           
+            <div class="column" id="HS30">HS29</div>
+            <div class="column" id="HS31">HS30</div>
+            <div class="column" id="HS32">HS31</div>
+             <div class="column" id="HS32">HS32</div>
+             <div class="columnNILL" ></div>
+              <div class="columnNILL" ></div>
+         </div>
+        <div class="row">
+						<div class="columnNILL" ></div>
+			<div class="columnNILL" ></div>
+            <div class="column" id="HS09">HS09</div>
+            <div class="column" id="HS10">HS10</div>
+            <div class="column" id="HSSTAGE">STAGE</div>
+            <div class="column" id="HS11">HS11</div>
+            <div class="column" id="HS12">HS12</div>
+            <div class="column" id="HS13">HS13</div>
+            <div class="columnNILL" ></div>
+			  <div class="columnNILL" ></div>
+         </div>
+        <div class="row">
+ 
+			  <div class="column" id="HS26">HS26</div>
+            <div class="column" id="HS08">HS08</div>
+            <div class="columnNILL" ></div>
+           <div class="columnNILL" ></div>
+           <div class="columnNILL" ></div>
+          <div class="columnNILL" ></div>
+          <div class="columnNILL" ></div>
+          <div class="columnNILL" ></div>
+           
+             <div class="column" id="HS14">HS14</div>
+            <div class="column" id="HS33">HS33</div>
+             
+         </div>
+          <div class="row">
+ 
+			  <div class="column" id="HS25">HS25</div>
+            <div class="column" id="HS07">HS07</div>
+            <div class="columnNILL" ></div>
+           <div class="columnNILL" ></div>
+           <div class="columnNILL" ></div>
+          <div class="columnNILL" ></div>
+          <div class="columnNILL" ></div>
+          <div class="columnNILL" ></div>
+           
+             <div class="column" id="HS15">HS15</div>
+            <div class="column" id="HS34">HS34</div>
+             
+         </div>
+          <div class="row">
+ 
+			  <div class="column" id="HS24">HS24</div>
+            <div class="column" id="HS05">HS05</div>
+            <div class="columnNILL" ></div>
+           <div class="columnNILL" ></div>
+           <div class="columnNILL" ></div>
+          <div class="columnNILL" ></div>
+          <div class="columnNILL" ></div>
+          <div class="columnNILL" ></div>
+           
+             <div class="column" id="HS16">HS16</div>
+            <div class="column" id="HS35">HS35</div>
+             
+         </div>
+        <div class="row">
+ 
+			  <div class="column" id="HS23">HS23</div>
+            <div class="column" id="HS04">HS04</div>
+            <div class="columnNILL" ></div>
+           <div class="columnNILL" ></div>
+           <div class="columnNILL" ></div>
+          <div class="columnNILL" ></div>
+          <div class="columnNILL" ></div>
+          <div class="columnNILL" ></div>
+           
+             <div class="column" id="HS17">HS17</div>
+            <div class="column" id="HS36">HS36</div>
+             
+         </div>
+         
+        <div class="row">
+ 
+			  <div class="column" id="HS21">HS21</div>
+            <div class="column" id="HS03">HS03</div>
+            <div class="columnNILL" ></div>
+           <div class="columnNILL" ></div>
+           <div class="columnNILL" ></div>
+          <div class="columnNILL" ></div>
+          <div class="columnNILL" ></div>
+          <div class="columnNILL" ></div>
+           
+             <div class="column" id="HS18">HS18</div>
+            <div class="column" id="HS37">HS37</div>
+             
+         </div>
+         <div class="row">
+ 
+			  <div class="column" id="HS20">HS20</div>
+            <div class="column" id="HS02">HS02</div>
+            <div class="columnNILL" ></div>
+           <div class="columnNILL" ></div>
+           <div class="columnNILL" ></div>
+          <div class="columnNILL" ></div>
+          <div class="columnNILL" ></div>
+          <div class="columnNILL" ></div>
+           
+             <div class="column" id="HS18"></div>
+            <div class="column" id="HS37"></div>
+             
+         </div>
+         <div class="row">
+ 
+			  <div class="column" id="HS20">HS19</div>
+            <div class="column" id="HS02">HS01</div>
+         <div class="column" ></div>
+          <div class="column" ></div>
+           <div class="column" ></div>
+        <div class="column" ></div>
+         <div class="column" ></div>
+         <div class="column" ></div>
+           
+             <div class="column" ></div>
+            <div class="column" ></div>
+             
+         </div>
+         <div class="row">
+						<div class="columnNILL" ></div>
+			<div class="columnNILL" ></div>
+				<div class="columnNILL" ></div>
+            <div class="column" id="HS41">HS41</div>
+            <div class="column" id="HS40">HS40</div>
+<div class="columnNILL" ></div>
+            <div class="column" id="HS39">HS39</div>
+            <div class="column" id="HS38">HS38</div>
+           
+            <div class="columnNILL" ></div>
+			  <div class="columnNILL" ></div>
+         </div>
+        
+    </div>
+<CENTER><H2><U>HSS BLOCK</U></H2></CENTER>
+    <script>
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function changeColors() {
+            const columns = document.querySelectorAll('.column');
+            columns.forEach(column => {
+                HS39.style.backgroundColor = getRandomColor();
+            });
+        }
+
+        document.getElementById('changeColorButton').addEventListener('click', changeColors);
+    </script>
+
+</body>
+</html>
