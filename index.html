@@ -10,34 +10,39 @@
     <div class="form-container">
         <img src="LOGO1.png" alt="Logo" class="logo">
         <h1>KNOW YOUR ALLOTTED ROOM</h1>
-        <input type="text" id="schoolCode" placeholder="Enter School Code" maxlength="5" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
-        <button onclick="checkSchoolCode()">FIND</button>
+        <input type="number" 
+            id="schoolCode" 
+            placeholder="Enter School Code" 
+            maxlength="5" 
+            oninput="revertBackgroundColor(this.value)"
+            >
+        <button onclick="checkSchoolCode()" >FIND</button>
         <div id="result"></div>
         <div class="grid">
             <!-- Same HTML structure as before -->
             <div class="item empty" style="grid-column: 1 / span 1; grid-row: 1 / span 3;"></div>
             
             <div class="item empty" style="grid-column: 2 / span 1; grid-row: 1 / span 2;"></div>
-            <div class="item" style="grid-column: 3 / span 1; grid-row: 1 / span 1;" id="HS27">HS27</div>
-            <div class="item" style="grid-column: 4 / span 1; grid-row: 1 / span 1;" id="HS28">HS28</div>
-            <div class="item" style="grid-column: 5 / span 1; grid-row: 1 / span 1;" id="HS29">HS29</div>
-            <div class="item" style="grid-column: 6 / span 1; grid-row: 1 / span 1;" id="HS30">HS30</div>
-            <div class="item" style="grid-column: 7 / span 1; grid-row: 1 / span 1;" id="HS31">HS31</div>
-            <div class="item" style="grid-column: 8 / span 1; grid-row: 1 / span 1;" id="HS32">HS32</div>
+            <div class="item first" style="grid-column: 3 / span 1; grid-row: 1 / span 1;" id="HS27">HS27</div>
+            <div class="item first" style="grid-column: 4 / span 1; grid-row: 1 / span 1;" id="HS28">HS28</div>
+            <div class="item first" style="grid-column: 5 / span 2; grid-row: 1 / span 1;" id="HS29">HS29</div>
+            <div class="item first" style="grid-column: 7 / span 1; grid-row: 1 / span 1;" id="HS30">HS30</div>
+            <div class="item first" style="grid-column: 8 / span 1; grid-row: 1 / span 1;" id="HS31">HS31</div>
+            <div class="item first" style="grid-column: 9 / span 1; grid-row: 1 / span 1;" id="HS32">HS32</div>
             
-            <div class="item empty" style="grid-column: 9 / span 2; grid-row: 1 / span 1;"></div>
+            <div class="item empty" style="grid-column: 10 / span 2; grid-row: 1 / span 1;"></div>
             
             
             <div class="item" style="grid-column: 3 / span 1; grid-row: 2 / span 1;" id="HS09">HS09</div>
             <div class="item" style="grid-column: 4 / span 1; grid-row: 2 / span 1;" id="HS10">HS10</div>
             
-            <div class="item empty" style="grid-column: 5 / span 1; grid-row: 2 / span 1;"></div>
+            <div class="item empty" style="grid-column: 5 / span 2; grid-row: 2 / span 1;">Stage 1</div>
             
-            <div class="item" style="grid-column: 6 / span 1; grid-row: 2 / span 1;" id="HS11">HS11</div>
-            <div class="item" style="grid-column: 7 / span 1; grid-row: 2 / span 1;" id="HS12">HS12</div>
-            <div class="item" style="grid-column: 8 / span 1; grid-row: 2 / span 1;" id="HS13">HS13</div>
+            <div class="item" style="grid-column: 7 / span 1; grid-row: 2 / span 1;" id="HS11">HS11</div>
+            <div class="item" style="grid-column: 8 / span 1; grid-row: 2 / span 1;" id="HS12">HS12</div>
+            <div class="item" style="grid-column: 9 / span 1; grid-row: 2 / span 1;" id="HS13">HS13</div>
             
-            <div class="item empty" style="grid-column: 9 / span 2; grid-row: 2 / span 1;"></div>
+            <div class="item empty" style="grid-column: 10 / span 2; grid-row: 2 / span 1;"></div>
             
             
             <div class="item" style="grid-column: 2 / span 1; grid-row: 3 / span 1;" id="HS08">HS08</div>
@@ -46,50 +51,50 @@
             <div class="item" style="grid-column: 2 / span 1; grid-row: 6 / span 1;" id="HS05">HS05</div>
             <div class="item" style="grid-column: 2 / span 1; grid-row: 7 / span 1;" id="HS04">HS04</div>
 
-            <div class="item" style="grid-column: 2 / span 1; grid-row: 8 / span 1;" id="HS03">HS03</div>
-            <div class="item" style="grid-column: 2 / span 1; grid-row: 9 / span 1;" id="HS02">HS02</div>
-            <div class="item" style="grid-column: 2 / span 1; grid-row: 10 / span 1;" id="HS01">HS01</div>
+            <div class="item ground" style="grid-column: 2 / span 1; grid-row: 8 / span 1;" id="HS03">HS03</div>
+            <div class="item ground" style="grid-column: 2 / span 1; grid-row: 9 / span 1;" id="HS02">HS02</div>
+            <div class="item ground" style="grid-column: 2 / span 1; grid-row: 10 / span 1;" id="HS01">HS01</div>
             
-            <div class="item text" style="grid-column: 4 / span 4; grid-row: 7 / span 1;" >HS BLOCK</div>
+            <div class="item text" style="grid-column: 3 / span 7; grid-row: 7 / span 1;" >HS BLOCK</div>
 
-            <div class="item" style="grid-column: 1 / span 1; grid-row: 4 / span 1;" id="HS26">HS26</div>
-            <div class="item" style="grid-column: 1 / span 1; grid-row: 5 / span 1;" id="HS25">HS25</div>
-            <div class="item" style="grid-column: 1 / span 1; grid-row: 6 / span 1;" id="HS24">HS24</div>
-            <div class="item" style="grid-column: 1 / span 1; grid-row: 7 / span 1;" id="HS23">HS23</div>
-            <div class="item" style="grid-column: 1 / span 1; grid-row: 8 / span 1;" id="HS22">HS22</div>
-            <div class="item" style="grid-column: 1 / span 1; grid-row: 9 / span 1;" id="HS21">HS21</div>
-            <div class="item" style="grid-column: 1 / span 1; grid-row: 10 / span 1;" id="HS20">HS20</div>
-            <div class="item" style="grid-column: 1 / span 1; grid-row: 11 / span 1;" id="HS19">HS19</div>
+            <div class="item first" style="grid-column: 1 / span 1; grid-row: 4 / span 1;" id="HS26">HS26</div>
+            <div class="item first" style="grid-column: 1 / span 1; grid-row: 5 / span 1;" id="HS25">HS25</div>
+            <div class="item first" style="grid-column: 1 / span 1; grid-row: 6 / span 1;" id="HS24">HS24</div>
+            <div class="item first" style="grid-column: 1 / span 1; grid-row: 7 / span 1;" id="HS23">HS23</div>
+            <div class="item first" style="grid-column: 1 / span 1; grid-row: 8 / span 1;" id="HS22">HS22</div>
+            <div class="item first" style="grid-column: 1 / span 1; grid-row: 9 / span 1;" id="HS21">HS21</div>
+            <div class="item first" style="grid-column: 1 / span 1; grid-row: 10 / span 1;" id="HS20">HS20</div>
+            <div class="item first" style="grid-column: 1 / span 1; grid-row: 11 / span 1;" id="HS19">HS19</div>
             
             <div class="item empty" style="grid-column: 2 / span 1; grid-row: 11 / span 1;"></div>
             <div class="item empty" style="grid-column: 1 / span 2; grid-row: 12 / span 1;"></div>
             <div class="item empty" style="grid-column: 1 / span 2; grid-row: 13 / span 1;"></div>
             
-            <div class="item empty" style="grid-column: 3 / span 6; grid-row: 12 / span 1;"></div>
+            <div class="item empty" style="grid-column: 3 / span 7; grid-row: 12 / span 1;"></div>
             
-            <div class="item" style="grid-column: 3 / span 1; grid-row: 13 / span 1;" id="HS40">HS40</div>
-            <div class="item" style="grid-column: 4 / span 1; grid-row: 13 / span 1;" id="HS41">HS41</div>
+            <div class="item first" style="grid-column: 3 / span 1; grid-row: 13 / span 1;" id="HS40">HS40</div>
+            <div class="item first" style="grid-column: 4 / span 1; grid-row: 13 / span 1;" id="HS41">HS41</div>
             
-            <div class="item empty" style="grid-column: 5 / span 2; grid-row: 13 / span 1;"></div>
+            <div class="item empty" style="grid-column: 5 / span 3; grid-row: 13 / span 1;"></div>
             
-            <div class="item" style="grid-column: 7 / span 1; grid-row: 13 / span 1;" id="HS39">HS39</div>
-            <div class="item" style="grid-column: 8 / span 1; grid-row: 13 / span 1;" id="HS38">HS38</div>
+            <div class="item first" style="grid-column: 8 / span 1; grid-row: 13 / span 1;" id="HS39">HS39</div>
+            <div class="item first" style="grid-column: 9 / span 1; grid-row: 13 / span 1;" id="HS38">HS38</div>
             
-            <div class="item" style="grid-column: 9 / span 1; grid-row: 3 / span 1;" id="HS14">HS14</div>
-            <div class="item" style="grid-column: 9 / span 1; grid-row: 4 / span 1;" id="HS15">HS15</div>
-            <div class="item" style="grid-column: 9 / span 1; grid-row: 5 / span 1;" id="HS16">HS16</div>
-            <div class="item" style="grid-column: 9 / span 1; grid-row: 6 / span 1;" id="HS17">HS17</div>
-            <div class="item" style="grid-column: 9 / span 1; grid-row: 7 / span 1;" id="HS18">HS18</div>
-            
-            <div class="item empty" style="grid-column: 9 / span 1; grid-row: 8 / span 6;"></div>
-            
-            <div class="item" style="grid-column: 10 / span 1; grid-row: 3 / span 1;" id="HS33">HS33</div>
-            <div class="item" style="grid-column: 10 / span 1; grid-row: 4 / span 1;" id="HS34">HS34</div>
-            <div class="item" style="grid-column: 10 / span 1; grid-row: 5 / span 1;" id="HS35">HS35</div>
-            <div class="item" style="grid-column: 10 / span 1; grid-row: 6 / span 1;" id="HS36">HS36</div>
-            <div class="item" style="grid-column: 10 / span 1; grid-row: 7 / span 1;" id="HS37">HS37</div>
+            <div class="item" style="grid-column: 10 / span 1; grid-row: 3 / span 1;" id="HS14">HS14</div>
+            <div class="item" style="grid-column: 10 / span 1; grid-row: 4 / span 1;" id="HS15">HS15</div>
+            <div class="item" style="grid-column: 10 / span 1; grid-row: 5 / span 1;" id="HS16">HS16</div>
+            <div class="item" style="grid-column: 10 / span 1; grid-row: 6 / span 1;" id="HS17">HS17</div>
+            <div class="item" style="grid-column: 10 / span 1; grid-row: 7 / span 1;" id="HS18">HS18</div>
             
             <div class="item empty" style="grid-column: 10 / span 1; grid-row: 8 / span 6;"></div>
+            
+            <div class="item first" style="grid-column: 11 / span 1; grid-row: 3 / span 1;" id="HS33">HS33</div>
+            <div class="item first" style="grid-column: 11 / span 1; grid-row: 4 / span 1;" id="HS34">HS34</div>
+            <div class="item first" style="grid-column: 11 / span 1; grid-row: 5 / span 1;" id="HS35">HS35</div>
+            <div class="item first" style="grid-column: 11 / span 1; grid-row: 6 / span 1;" id="HS36">HS36</div>
+            <div class="item first" style="grid-column: 11 / span 1; grid-row: 7 / span 1;" id="HS37">HS37</div>
+            
+            <div class="item empty" style="grid-column: 11 / span 1; grid-row: 8 / span 6;"></div>
                 </div>
         <div class="grid hss">
             <!-- Same HTML structure as before -->
@@ -142,21 +147,21 @@
             ></div>
         
             <div
-                class="item"
+                class="item first"
                 style="grid-column: 3 / span 1; grid-row: 2 / span 1"
                 id="HSS6"
             >
             HSS6
             </div>
             <div
-                class="item"
+                class="item first"
                 style="grid-column: 4 / span 1; grid-row: 2 / span 1"
                 id="HSS7"
             >
             HSS7
             </div>
             <div
-                class="item"
+                class="item first"
                 style="grid-column: 5 / span 1; grid-row: 2 / span 1"
                 id="HSS8"
             >
@@ -173,6 +178,10 @@
     </div>
 
     <script>
+    let roomNumber = "";
+
+// document.getElementById("schoolCode").addEventListener("change", revertBackgroundColor);
+
         const schoolCodes = [
             "17035","17036","17075","17076","17077","17078","17079","17093","17097","17111","17112","17114",
             "17502","17503","17504","17505","17506","17507","17508","17509","17510","17512","17513","17514",
@@ -212,13 +221,20 @@
             "HS29","HS29","HS34","HS30","HS23","HS10","HS09","HS40","HS11","HS09","HS23"
         ];
 
+        function revertBackgroundColor(val) {
+            document.getElementById(roomNumber).style.backgroundColor = '';
+            document.getElementById('result').textContent = '';
+        }
+        
         function checkSchoolCode() {
     const inputCode = document.getElementById('schoolCode').value.trim();
     
     const resultDiv = document.getElementById('result');
 
+
     if (schoolCodes.includes(inputCode)) {
-        const roomNumber = roomnums[schoolCodes.indexOf(inputCode)];
+        roomNumber = roomnums[schoolCodes.indexOf(inputCode)];
+
         resultDiv.innerHTML = `${schoolnames[schoolCodes.indexOf(inputCode)]} - Allotted room: <strong class="room-number">${roomNumber}</strong>`;
         resultDiv.className = 'success';
         const element = document.getElementById(roomNumber);
