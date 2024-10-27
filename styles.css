@@ -100,3 +100,38 @@ button:active {
     font-size: 1.25rem; /* Adjust size as needed */
     color: #16a34a; /* Color to match the theme */
 }
+:root {
+    --cell-size: min(2vw, 50px);
+    --gap-size: min(0.5vw, 5px);
+  }
+
+  .item {
+    background-color: #b0b0b0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    font-size: calc(var(--cell-size) * 0.28);
+    color: black;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .item.empty {
+    background-color: white;
+    border: 1px dashed #999;
+  }
+
+  .item:hover {
+    transform: translateZ(10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(10, var(--cell-size));
+    grid-template-rows: repeat(13, var(--cell-size));
+    gap: var(--gap-size);
+    justify-content: center;
+    align-content: center;
+    margin: 0;
+  }
