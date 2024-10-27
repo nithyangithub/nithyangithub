@@ -124,9 +124,16 @@ button:active {
   }
   .item.text {
     background-color: white;
+    font-size: 1.25rem;
+
     /* border: 1px dashed #999; */
   }
 
+  .item.first {
+    background-color: #add8e6;
+    font-weight: bold;
+    /* border: 1px dashed #999; */
+  }
   .item:hover {
     transform: translateZ(10px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -134,7 +141,7 @@ button:active {
 
   .grid {
     display: grid;
-    grid-template-columns: repeat(10, var(--cell-size));
+    grid-template-columns: repeat(11, var(--cell-size));
     grid-template-rows: repeat(13, var(--cell-size));
     gap: var(--gap-size);
     justify-content: center;
