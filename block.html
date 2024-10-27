@@ -1,159 +1,150 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <style>
-        :root {
-            --cell-size: min(5vw, 50px);
-            --gap-size: min(0.5vw, 5px);
-        }
-
-        body {
-            display: grid;
-            grid-template-columns: repeat(10, var(--cell-size));
-            grid-template-rows: repeat(13, var(--cell-size));
-            gap: var(--gap-size);
-            background-color: #d3d3d3;
-            justify-content: center;
-            align-content: center;
-            height: 100vh;
-            margin: 0;
-            min-height: 100vh;
-            padding: 1rem;
-            box-sizing: border-box;
-        }
-
-        @media (max-width: 768px) {
-            :root {
-                --cell-size: min(7vw, 50px);
-            }
-        }
-
-        @media (max-width: 480px) {
-            :root {
-                --cell-size: min(9vw, 50px);
-            }
-            body {
-                padding: 0.5rem;
-            }
-        }
-
-        .item {
-            background-color: #b0b0b0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: Arial, sans-serif;
-            font-size: calc(var(--cell-size) * 0.28);
-            color: black;
-            width: 100%;
-            height: 100%;
-            box-sizing: border-box;
-        }
-
-        .item.empty {
-            background-color: white;
-        }
-
-        .container {
-            display: contents;
-            max-width: 100%;
-            overflow: auto;
-        }
-
-        @media (orientation: landscape) and (max-height: 600px) {
-            body {
-                height: auto;
-                min-height: unset;
-                padding: 1rem;
-            }
-            :root {
-                --cell-size: min(4vh, 50px);
-            }
-        }
-
-        /* Add smooth transitions for resizing */
-        .item {
-            transition: all 0.3s ease-in-out;
-        }
-
-        /* Ensure content stays visible on very small screens */
-        @media (max-width: 360px) {
-            :root {
-                --cell-size: min(11vw, 50px);
-            }
-            body {
-                padding: 0.25rem;
-                gap: 2px;
-            }
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Know Your Allotted Room</title>
 </head>
 <body>
-    <!-- Same HTML structure as before -->
-    <div class="item empty" style="grid-column: 1 / span 1; grid-row: 1 / span 3;"></div>
+    <div class="form-container">
+        <img src="LOGO1.png" alt="Logo" class="logo">
+        <h1>KNOW YOUR ALLOTTED ROOM</h1>
+        <input type="text" id="schoolCode" placeholder="Enter School Code" maxlength="5" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+        <button onclick="checkSchoolCode()">FIND</button>
+        <div id="result"></div>
+        <div class="grid">
+            <!-- Same HTML structure as before -->
+            <div class="item empty" style="grid-column: 1 / span 1; grid-row: 1 / span 3;"></div>
+            
+            <div class="item empty" style="grid-column: 2 / span 1; grid-row: 1 / span 2;"></div>
+            <div class="item" style="grid-column: 3 / span 1; grid-row: 1 / span 1;" id="HS27">HS27</div>
+            <div class="item" style="grid-column: 4 / span 1; grid-row: 1 / span 1;" id="HS28">HS28</div>
+            <div class="item" style="grid-column: 5 / span 1; grid-row: 1 / span 1;" id="HS29">HS29</div>
+            <div class="item" style="grid-column: 6 / span 1; grid-row: 1 / span 1;" id="HS30">HS30</div>
+            <div class="item" style="grid-column: 7 / span 1; grid-row: 1 / span 1;" id="HS31">HS31</div>
+            <div class="item" style="grid-column: 8 / span 1; grid-row: 1 / span 1;" id="HS32">HS32</div>
+            
+            <div class="item empty" style="grid-column: 9 / span 2; grid-row: 1 / span 1;"></div>
+            
+            
+            <div class="item" style="grid-column: 3 / span 1; grid-row: 2 / span 1;" id="HS09">HS09</div>
+            <div class="item" style="grid-column: 4 / span 1; grid-row: 2 / span 1;" id="HS10">HS10</div>
+            
+            <div class="item empty" style="grid-column: 5 / span 1; grid-row: 2 / span 1;"></div>
+            
+            <div class="item" style="grid-column: 6 / span 1; grid-row: 2 / span 1;" id="HS11">HS11</div>
+            <div class="item" style="grid-column: 7 / span 1; grid-row: 2 / span 1;" id="HS12">HS12</div>
+            <div class="item" style="grid-column: 8 / span 1; grid-row: 2 / span 1;" id="HS13">HS13</div>
+            
+            <div class="item empty" style="grid-column: 9 / span 2; grid-row: 2 / span 1;"></div>
+            
+            
+            <div class="item" style="grid-column: 2 / span 1; grid-row: 3 / span 1;" id="HS08">HS08</div>
+            <div class="item" style="grid-column: 2 / span 1; grid-row: 4 / span 1;" id="HS07">HS07</div>
+            <div class="item" style="grid-column: 2 / span 1; grid-row: 5 / span 1;" id="HS06">HS06</div>
+            <div class="item" style="grid-column: 2 / span 1; grid-row: 6 / span 1;" id="HS05">HS05</div>
+            <div class="item" style="grid-column: 2 / span 1; grid-row: 7 / span 1;" id="HS04">HS04</div>
+            <div class="item" style="grid-column: 2 / span 1; grid-row: 8 / span 1;" id="HS03">HS03</div>
+            <div class="item" style="grid-column: 2 / span 1; grid-row: 9 / span 1;" id="HS02">HS02</div>
+            <div class="item" style="grid-column: 2 / span 1; grid-row: 10 / span 1;" id="HS01">HS01</div>
+            
+            <div class="item" style="grid-column: 1 / span 1; grid-row: 4 / span 1;" id="HS26">HS26</div>
+            <div class="item" style="grid-column: 1 / span 1; grid-row: 5 / span 1;" id="HS25">HS25</div>
+            <div class="item" style="grid-column: 1 / span 1; grid-row: 6 / span 1;" id="HS24">HS24</div>
+            <div class="item" style="grid-column: 1 / span 1; grid-row: 7 / span 1;" id="HS23">HS23</div>
+            <div class="item" style="grid-column: 1 / span 1; grid-row: 8 / span 1;" id="HS22">HS22</div>
+            <div class="item" style="grid-column: 1 / span 1; grid-row: 9 / span 1;" id="HS21">HS21</div>
+            <div class="item" style="grid-column: 1 / span 1; grid-row: 10 / span 1;" id="HS20">HS20</div>
+            <div class="item" style="grid-column: 1 / span 1; grid-row: 11 / span 1;" id="HS19">HS19</div>
+            
+            <div class="item empty" style="grid-column: 2 / span 1; grid-row: 11 / span 1;"></div>
+            <div class="item empty" style="grid-column: 1 / span 2; grid-row: 12 / span 1;"></div>
+            <div class="item empty" style="grid-column: 1 / span 2; grid-row: 13 / span 1;"></div>
+            
+            <div class="item empty" style="grid-column: 3 / span 6; grid-row: 12 / span 1;"></div>
+            
+            <div class="item" style="grid-column: 3 / span 1; grid-row: 13 / span 1;" id="HS40">HS40</div>
+            <div class="item" style="grid-column: 4 / span 1; grid-row: 13 / span 1;" id="HS41">HS41</div>
+            
+            <div class="item empty" style="grid-column: 5 / span 2; grid-row: 13 / span 1;"></div>
+            
+            <div class="item" style="grid-column: 7 / span 1; grid-row: 13 / span 1;" id="HS39">HS39</div>
+            <div class="item" style="grid-column: 8 / span 1; grid-row: 13 / span 1;" id="HS38">HS38</div>
+            
+            <div class="item" style="grid-column: 9 / span 1; grid-row: 3 / span 1;" id="HS14">HS14</div>
+            <div class="item" style="grid-column: 9 / span 1; grid-row: 4 / span 1;" id="HS15">HS15</div>
+            <div class="item" style="grid-column: 9 / span 1; grid-row: 5 / span 1;" id="HS16">HS16</div>
+            <div class="item" style="grid-column: 9 / span 1; grid-row: 6 / span 1;" id="HS17">HS17</div>
+            <div class="item" style="grid-column: 9 / span 1; grid-row: 7 / span 1;" id="HS18">HS18</div>
+            
+            <div class="item empty" style="grid-column: 9 / span 1; grid-row: 8 / span 6;"></div>
+            
+            <div class="item" style="grid-column: 10 / span 1; grid-row: 3 / span 1;" id="HS33">HS33</div>
+            <div class="item" style="grid-column: 10 / span 1; grid-row: 4 / span 1;" id="HS34">HS34</div>
+            <div class="item" style="grid-column: 10 / span 1; grid-row: 5 / span 1;" id="HS35">HS35</div>
+            <div class="item" style="grid-column: 10 / span 1; grid-row: 6 / span 1;" id="HS36">HS36</div>
+            <div class="item" style="grid-column: 10 / span 1; grid-row: 7 / span 1;" id="HS37">HS37</div>
+            
+            <div class="item empty" style="grid-column: 10 / span 1; grid-row: 8 / span 6;"></div>
+                </div>
+    </div>
 
-    <div class="item empty" style="grid-column: 2 / span 1; grid-row: 1 / span 2;"></div>
-    <div class="item" style="grid-column: 3 / span 1; grid-row: 1 / span 1;">27</div>
-    <div class="item" style="grid-column: 4 / span 1; grid-row: 1 / span 1;">28</div>
-    <div class="item" style="grid-column: 5 / span 1; grid-row: 1 / span 1;">29</div>
-    <div class="item" style="grid-column: 6 / span 1; grid-row: 1 / span 1;">30</div>
-    <div class="item" style="grid-column: 7 / span 1; grid-row: 1 / span 1;">31</div>
-    <div class="item" style="grid-column: 8 / span 1; grid-row: 1 / span 1;">32</div>
-    <div class="item" style="grid-column: 3 / span 1; grid-row: 2 / span 1;">9</div>
-    <div class="item" style="grid-column: 4 / span 1; grid-row: 2 / span 1;">10</div>
+    <script>
+        const schoolCodes = [
+            "17035","17036","17075","17076","17077","17078","17079","17093","17097","17111","17112","17114",
+            "17502","17503","17504","17505","17506","17507","17508","17509","17510","17512","17513","17514",
+            "17515","17516","17517","17518","17520","17521","17522","17523","17524","17525","17526","17527",
+            "17528","17529","17530","17531","17532","17534","17535","17536","17537","17538","17539","17541",
+            "17542","17543","17544","17545","17546","17547","17548","17549","17550","17551","17552","17553",
+            "17554","17555","17556","17558","17563","17565","17567"
+        ];
+        const schoolnames = [
+            "G. H. S. S. Beypore","G. R. F. T. H. S. And V. H. S. S. Beypore","G. G. V. H. S. S. Feroke",
+            "Farook Higher Secondary School Farook College (PO)","Venerini E. M. H. S. S.","U. H. H. S. S. Chaliyam",
+            "Sevamandir Post Basic School Ramanattukara","G. V. H. S. S. Cheruvannur","C. M. High School Mannur",
+            "G H S Nallalam","QADISIYA ENGLISH SCHOOL","NIVEDITHA VIDYA PEEDAM ENGLISH MEDIUM HIGH SCHOOL",
+            "G. L. P. S. Beypore South","G. L. P. S. Mukkathukadavu","G. L. P. S. West Nallur","G. L. P. S. Beypore West",
+            "G. L. P. S. Chaliyam","G. L. P. S. Nallur","G. M. L. P. S. Karinkallai","G. M. L. P. S. Karuvanthuruthi",
+            "Calicut Orphanage A. L. P. S. Kolathara","Cheruvannur West A.L.P.S","Farook A. L. P. S. Farook College (PO)",
+            "I. E. M. L. P. S. Thumbapadam","Jinarajadas A. L. P. S. Naduvattam","Kacheripparamba A. M. L. P. S. Kolathara",
+            "Kadalundi A. L. P. S.","Kadalundi A. M. L. P. S.","M. I. A. M. L. P. S. Perumugham","M. K. A. M. L. P. S. Mannur",
+            "M. M. L. P. S. Chaliyam","Nallalam A. L. P. S. Areekkad","Nallur Narayana L. P. B. S. Feroke",
+            "Padmaraj A. L. P. S. Mannur","Puttekkad A. M. L. P. S. Feroke","Mannur St. Pauls A. L. P. S.",
+            "T.M.Madrassa A.L.P.S. Kolathara","Thattadathumkave A. M. L. P. S. Naduvattam","Karinkallai V. P. A. L. P. S.",
+            "Salafi E. M. L. P. School Mathottam","Govt. Fisheries L. P. S. Chaliyam","G. L. P. S. Kadalundi",
+            "G. L. P. S. Beypore","G. W. L. P. S. Feroke","Govindavilas A. L. P. S Naduvattam","G. G. U. P. S. Feroke",
+            "G. M. U. P. S. Feroke","G. U. P. S. Ramanattukara","G. U. P. S. Naduvattam","A. E. A. U. P. B. S. Ramanattukara",
+            "Athmavidya Sangham U. P .S. Cheruvannur","B. E. M. U. P. S. Feroke","Kadalundi Sreedevi A. U. P. S. Chaliyam (PO)",
+            "Little Flower A. U. P. S. Cheruvannur","Mannur Krishna A. U. P. S. Kadalundi","Mannur North A. U. P. S.",
+            "Nallur East A. U. P. S. Perumugham","B. M. O. U. P. S. Karuvanthuruthi","Hajee P. B. M. K. U. P. S. Chaliyam",
+            "N. S. S. U. P. S. Beypore","Nallalam A. U P S.","Ganapat A. U. P. S. Karinkallai","Ganapat A. U. P. S. Ramanattukara",
+            "GLPS KARINKALLAI","Calicut H. S. S. For Handicapped Kolathara","I.E.M.U.P. School"," Thumbappadam",
+            "MIFTHAHUL ULOOM ENGLISH MEDIUM SCHOOL"
+        ];
+        const roomnums = [
+            "HS20","HS32","HSS8","HSS2","HS37","HS35","HS39","HS26","HSS3","HSS5","HS19","HS27","HS31","HS24",
+            "HS38","HS31","HS40","HS38","HS13","HS41","HS23","HS19","HS34","HS09","HS30","HS19","HSS7","HS38",
+            "HS28","HS40","HS33","HS25","HS28","HS41","HS13","HS24","HS41","HS30","HS10","HSS5","HS33","HSS6",
+            "HS21","HS29","HS21","HS08","HS13","HS08","HS31","HS10","HS22","HS28","HS34","HS25","HS24","HS25",
+            "HS29","HS29","HS34","HS30","HS23","HS10","HS09","HS40","HS11","HS09","HS23"
+        ];
 
-    <div class="item empty" style="grid-column: 5 / span 1; grid-row: 2 / span 1;"></div>
-    <div class="item" style="grid-column: 6 / span 1; grid-row: 2 / span 1;">11</div>
-    <div class="item" style="grid-column: 7 / span 1; grid-row: 2 / span 1;">12</div>
-    <div class="item" style="grid-column: 8 / span 1; grid-row: 2 / span 1;">13</div>
-
-    <div class="item empty" style="grid-column: 9 / span 2; grid-row: 1 / span 1;"></div>
-    <div class="item empty" style="grid-column: 9 / span 2; grid-row: 2 / span 1;"></div>
-
-    <div class="item" style="grid-column: 2 / span 1; grid-row: 3 / span 1;">8</div>
-    <div class="item" style="grid-column: 1 / span 1; grid-row: 4 / span 1;">26</div>
-    <div class="item" style="grid-column: 2 / span 1; grid-row: 4 / span 1;">7</div>
-    <div class="item" style="grid-column: 1 / span 1; grid-row: 5 / span 1;">25</div>
-    <div class="item" style="grid-column: 2 / span 1; grid-row: 5 / span 1;">6</div>
-    <div class="item" style="grid-column: 1 / span 1; grid-row: 6 / span 1;">24</div>
-    <div class="item" style="grid-column: 2 / span 1; grid-row: 6 / span 1;">5</div>
-    <div class="item" style="grid-column: 1 / span 1; grid-row: 7 / span 1;">23</div>
-    <div class="item" style="grid-column: 2 / span 1; grid-row: 7 / span 1;">4</div>
-    <div class="item" style="grid-column: 1 / span 1; grid-row: 8 / span 1;">22</div>
-    <div class="item" style="grid-column: 2 / span 1; grid-row: 8 / span 1;">3</div>
-    <div class="item" style="grid-column: 1 / span 1; grid-row: 9 / span 1;">21</div>
-    <div class="item" style="grid-column: 2 / span 1; grid-row: 9 / span 1;">2</div>
-    <div class="item" style="grid-column: 1 / span 1; grid-row: 10 / span 1;">20</div>
-    <div class="item" style="grid-column: 2 / span 1; grid-row: 10 / span 1;">1</div>
-    <div class="item" style="grid-column: 1 / span 1; grid-row: 11 / span 1;">19</div>
-
-    <div class="item empty" style="grid-column: 2 / span 1; grid-row: 11 / span 1;"></div>
-    <div class="item empty" style="grid-column: 1 / span 2; grid-row: 12 / span 1;"></div>
-    <div class="item empty" style="grid-column: 1 / span 2; grid-row: 13 / span 1;"></div>
+        function checkSchoolCode() {
+    const inputCode = document.getElementById('schoolCode').value.trim();
     
-    <div class="item empty" style="grid-column: 3 / span 6; grid-row: 12 / span 1;"></div>
+    const resultDiv = document.getElementById('result');
 
-    <div class="item" style="grid-column: 3 / span 1; grid-row: 13 / span 1;">40</div>
-    <div class="item" style="grid-column: 4 / span 1; grid-row: 13 / span 1;">41</div>
+    if (schoolCodes.includes(inputCode)) {
+        const roomNumber = roomnums[schoolCodes.indexOf(inputCode)];
+        resultDiv.innerHTML = `${schoolnames[schoolCodes.indexOf(inputCode)]} - Allotted room: <strong class="room-number">${roomNumber}</strong>`;
+        resultDiv.className = 'success';
+    } else {
+        resultDiv.textContent = "School code not registered.";
+        resultDiv.className = 'error';
+    }
+}
 
-    <div class="item empty" style="grid-column: 5 / span 2; grid-row: 13 / span 1;"></div>
-
-    <div class="item" style="grid-column: 7 / span 1; grid-row: 13 / span 1;">39</div>
-    <div class="item" style="grid-column: 8 / span 1; grid-row: 13 / span 1;">38</div>
-
-    <div class="item" style="grid-column: 9 / span 1; grid-row: 3 / span 1;">14</div>
-    <div class="item" style="grid-column: 9 / span 1; grid-row: 4 / span 1;">15</div>
-    <div class="item" style="grid-column: 9 / span 1; grid-row: 5 / span 1;">16</div>
-    <div class="item" style="grid-column: 9 / span 1; grid-row: 6 / span 1;">17</div>
-    <div class="item" style="grid-column: 9 / span 1; grid-row: 7 / span 1;">18</div>
-
-    <div class="item empty" style="grid-column: 9 / span 1; grid-row: 8 / span 6;"></div>
-
-    <div class="item" style="grid-column: 10 / span 1; grid-row: 3 / span 1;">33</div>
-    <div class="item" style="grid-column: 10 / span 1; grid-row: 4 / span 1;">34</div>
-    <div class="item" style="grid-column: 10 / span 1; grid-row: 5 / span 1;">35</div>
-    <div class="item" style="grid-column: 10 / span 1; grid-row: 6 / span 1;">36</div>
-    <div class="item" style="grid-column: 10 / span 1; grid-row: 7 / span 1;">37</div>
-
-    <div class="item empty" style="grid-column: 10 / span 1; grid-row: 8 / span 6;"></div>
+    </script>
 </body>
-</html>
+
