@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.9">
     <link rel="stylesheet" href="styles.css">
     <title>Know Your Allotted Room</title>
 </head>
@@ -45,10 +45,13 @@
             <div class="item" style="grid-column: 2 / span 1; grid-row: 5 / span 1;" id="HS06">HS06</div>
             <div class="item" style="grid-column: 2 / span 1; grid-row: 6 / span 1;" id="HS05">HS05</div>
             <div class="item" style="grid-column: 2 / span 1; grid-row: 7 / span 1;" id="HS04">HS04</div>
+
             <div class="item" style="grid-column: 2 / span 1; grid-row: 8 / span 1;" id="HS03">HS03</div>
             <div class="item" style="grid-column: 2 / span 1; grid-row: 9 / span 1;" id="HS02">HS02</div>
             <div class="item" style="grid-column: 2 / span 1; grid-row: 10 / span 1;" id="HS01">HS01</div>
             
+            <div class="item text" style="grid-column: 4 / span 4; grid-row: 7 / span 1;" >HS BLOCK</div>
+
             <div class="item" style="grid-column: 1 / span 1; grid-row: 4 / span 1;" id="HS26">HS26</div>
             <div class="item" style="grid-column: 1 / span 1; grid-row: 5 / span 1;" id="HS25">HS25</div>
             <div class="item" style="grid-column: 1 / span 1; grid-row: 6 / span 1;" id="HS24">HS24</div>
@@ -88,6 +91,85 @@
             
             <div class="item empty" style="grid-column: 10 / span 1; grid-row: 8 / span 6;"></div>
                 </div>
+        <div class="grid hss">
+            <!-- Same HTML structure as before -->
+        
+            <div
+                class="item"
+                style="grid-column: 1 / span 1; grid-row: 1 / span 1"
+                id="HSS5"
+            >
+                HSS5
+            </div>
+            <div
+                class="item"
+                style="grid-column: 1 / span 1; grid-row: 2 / span 1"
+                id="HSS4"
+            >
+            HSS4
+            </div>
+            <div
+                class="item"
+                style="grid-column: 1 / span 1; grid-row: 3 / span 1"
+                id="HSS3"
+            >
+            HSS3
+            </div>
+        
+            <div
+                class="item empty"
+                style="grid-column: 2 / span 2; grid-row: 1 / span 1"
+            ></div>
+        
+            <div
+                class="item"
+                style="grid-column: 4 / span 1; grid-row: 1 / span 1"
+                id="HSS1"
+            >
+            HSS1
+            </div>
+            <div
+                class="item"
+                style="grid-column: 5 / span 1; grid-row: 1 / span 1"
+                id="HSS2"
+            >
+            HSS2
+            </div>
+        
+            <div
+                class="item empty"
+                style="grid-column: 2 / span 1; grid-row: 2 / span 1"
+            ></div>
+        
+            <div
+                class="item"
+                style="grid-column: 3 / span 1; grid-row: 2 / span 1"
+                id="HSS6"
+            >
+            HSS6
+            </div>
+            <div
+                class="item"
+                style="grid-column: 4 / span 1; grid-row: 2 / span 1"
+                id="HSS7"
+            >
+            HSS7
+            </div>
+            <div
+                class="item"
+                style="grid-column: 5 / span 1; grid-row: 2 / span 1"
+                id="HSS8"
+            >
+            HSS8
+            </div>
+        
+            <div
+                class="item text"
+                style="grid-column: 2 / span 4; grid-row: 3 / span 1"
+            >
+                HSS BLOCK
+            </div>
+            </div>
     </div>
 
     <script>
@@ -140,7 +222,7 @@
         resultDiv.innerHTML = `${schoolnames[schoolCodes.indexOf(inputCode)]} - Allotted room: <strong class="room-number">${roomNumber}</strong>`;
         resultDiv.className = 'success';
         const element = document.getElementById(roomNumber);
-        HS39.style.backgroundColor = 'lightgreen';
+        element.style.backgroundColor = 'lightgreen';
 
     } else {
         resultDiv.textContent = "School code not registered.";
