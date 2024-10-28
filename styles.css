@@ -21,17 +21,6 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-/* Form Container */
-.form-container {
-    max-width: 400px;
-    width: 90%;
-    padding: 2rem;
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
 /* Title */
 h1 {
     font-size: 1.5rem;
@@ -60,6 +49,7 @@ h1 {
 
 /* Button */
 button {
+  
     width: 100%;
     padding: 0.75rem;
     font-size: 1rem;
@@ -183,3 +173,26 @@ button:active {
 .label {
     font-size: 12px;
 }
+
+
+/* Form Container */
+.form-container {
+    max-width: 400px;
+    width: 90%;
+    padding: 2rem;
+    height: 100%;
+
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+}
+
+.scroll-container {
+  width: 90%;
+
+}
+
