@@ -170,4 +170,16 @@ button:active {
       --cell-size: 8vw;
     }
   }
-  
+  .color-helper {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+.color-box {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+.label {
+    font-size: 12px;
+}
